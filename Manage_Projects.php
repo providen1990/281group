@@ -32,7 +32,7 @@ require_once 'connect.php';
                         <h1 class="page-header"> Manage Projects </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+                                <i class="fa fa-dashboard"></i>  <a href="main.php">Dashboard</a>
                             </li>
                             <li class="active">
                                 <i class="fa fa-list"></i> Manage Projects
