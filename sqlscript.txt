@@ -1,0 +1,23 @@
+CREATE TABLE `cmpe281`.`User` ( `user_id` INT(4) NOT NULL AUTO_INCREMENT , `name` VARCHAR(100) NOT NULL , `email` VARCHAR(200) NOT NULL , `experience` INT(3) NOT NULL , `supervisor_id` INT(10) NOT NULL , `role_id` INT(2) NOT NULL , `user_rating` INT(1) NOT NULL , PRIMARY KEY (`user_id`(4))) ENGINE = InnoDB;
+
+
+CREATE TABLE `cmpe281`.`Role` ( `role_id` INT(1) NOT NULL AUTO_INCREMENT , `role_name` VARCHAR(30) NOT NULL , PRIMARY KEY (`role_id`)) ENGINE = InnoDB;
+
+CREATE TABLE `cmpe281`.`Projects` ( `project_id` INT(5) NOT NULL AUTO_INCREMENT , `project_name` VARCHAR(30) NOT NULL , `project_start_date` DATE NOT NULL , `project_end_date` DATE NOT NULL , `project_description` VARCHAR(500) NOT NULL , `project_estimated_effort` INT(10) NOT NULL , PRIMARY KEY (`project_id`)) ENGINE = InnoDB
+
+CREATE TABLE `cmpe281`.`Users_Project` ( `user_id` INT(4) NOT NULL , `project_id` INT(5) NOT NULL , `project_start_date` DATE NOT NULL , `project_end_date` DATE NOT NULL ) ENGINE = InnoDB;
+
+INSERT INTO `role` (`role_id`, `role_name`) VALUES ('1', 'tester')
+
+ALTER TABLE `user` ADD FOREIGN KEY (`role_id`) REFERENCES `role`(`role_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+INSERT INTO `user` (`user_id`, `name`, `email`, `experience`, `supervisor_id`, `role_id`, `user_rating`) VALUES (NULL, 'tester1', 'terster1@gmail.com', '5', '', '1', '4');
+
+ALTER TABLE `user` ADD `skill` VARCHAR(200) NOT NULL AFTER `user_rating`;
+
+INSERT INTO `projects` (`project_id`, `project_name`, `project_start_date`, `project_end_date`, `project_description`, `project_estimated_effort`) VALUES (NULL, 'test project2', '2017-05-03', '2017-05-27', 'Test Project 2 Desc', '20');
+
+INSERT INTO `users_project` (`user_id`, `project_id`, `project_start_date`, `project_end_date`) VALUES ('1', '1', '2017-05-01', '2017-05-31'), ('2', '2', '2017-05-03', '2017-05-29');
+
+ALTER TABLE `projects` ADD `skill_required` VARCHAR(300) NOT NULL AFTER `project_estimated_effort`;
+
