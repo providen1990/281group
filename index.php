@@ -14,11 +14,14 @@
 </head>
 
 
-<body>
+<body background="crop.gif">
 
 <div class = "col-md-2 col-md-offset-5">
     <form method = "post" action = "authenticate.php">
-
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
         <div class = "text-center"> <h2> Login </h2> </div><br />
 
         <input type = "text" name = "username" placeholder="Username" class="form-control" /> <br />

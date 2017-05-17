@@ -11,12 +11,12 @@ session_start();
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="main.php">Tester Management System</a>
+        <a class="navbar-brand" href="main.php" style="color: antiquewhite">Tester Management System</a>
     </div>
     <!-- Top Menu Items -->
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
+            <a href="#" style="color: antiquewhite" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
                         class="caret"></b></a>
             <ul class="dropdown-menu message-dropdown">
                 <li class="message-preview">
@@ -70,7 +70,7 @@ session_start();
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+            <a href="#" style="color: antiquewhite" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
             <ul class="dropdown-menu alert-dropdown">
                 <li>
                     <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
@@ -97,7 +97,7 @@ session_start();
             </ul>
         </li>
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+            <a href="#" style="color: antiquewhite" class="dropdown-toggle" data-toggle="dropdown"><i
                         class="fa fa-user"></i> <?php echo $_SESSION["username"]; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
@@ -120,13 +120,13 @@ session_start();
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
             <li>
-                <a href="main.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="main.php" style="color: antiquewhite"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="Manage_Projects.php"><i class="fa fa-fw fa-bar-chart-o"></i> Manage Projects </a>
+                <a href="Manage_Projects.php" style="color: antiquewhite"><i class="fa fa-fw fa-bar-chart-o"></i> Manage Projects </a>
             </li>
             <li>
-                <a href="Community.php"><i class="fa fa-fw fa-bar-chart-o"></i> Community </a>
+                <a href="Community.php" style="color: antiquewhite"><i class="fa fa-fw fa-bar-chart-o"></i> Community </a>
             </li>
 
         </ul>
