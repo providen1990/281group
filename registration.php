@@ -13,7 +13,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
-<body background="crop.gif">
+<body >
 
 <div class = "col-md-2 col-md-offset-5">
 
@@ -24,10 +24,10 @@
 	<input type="text" class="form-control" name="name" placeholder="Full-name" required /> <br />
     <input type="text" class="form-control" name="experience" placeholder="Experience in Years" required /> <br />
     <input type="text" class="form-control" name="skill" placeholder="Skills" required /> <br />
-    <select class="form-control">
-        <option type="checkbox" name="role_id" value=1 id="test1" /> Tester </option><br />
-        <option type="checkbox" name="role_id" value=2 id="test2" /> Manager </option>
-    </select>
+    <fieldset>
+        <input type="checkbox" name="role_id" value="1" />Tester <br />
+        <input type="checkbox" name="role_id" value="2" />Manager<br />
+    </fieldset>
 	<div class="text-center"> 
   	  <input type="submit" class="btn btn-secondary" name="submit" />
 	</div>
