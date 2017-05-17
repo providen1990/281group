@@ -13,7 +13,7 @@ if($_SESSION['username'] == ''){
 <?php 
 require 'templates/metaAndResources.php'; 
 require_once 'connect.php';
-
+require 'apiFunction.php';
 ?>
 
 </head>
@@ -77,7 +77,6 @@ require_once 'connect.php';
 	}
     else{
         $sql = "select device_os, COUNT(device_os) AS MOST_FREQUENT from record WHERE user_id=" . getIDByEmail($_SESSION['username'],$connection) .  " GROUP BY device_os ORDER BY COUNT(device_os) DESC";
-        echo $sql;
         $result = mysqli_query($connection, $sql);
         $row2 = mysqli_fetch_assoc($result);
         $temp = $row2['device_os'];
