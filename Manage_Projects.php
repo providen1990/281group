@@ -89,7 +89,8 @@ require 'apiFunction.php';
 		if ($row_cnt >= 1) {
 			echo '<div class="row">';
 			echo '<div class="col-lg-12">';
-			echo '<h2>Search Results</h2>';
+            if( strpos( $sql, '*' ) !== false ) echo '<h2>Recommended</h2>';
+            else echo '<h2>Search Results</h2>';
 			echo '<div class="table-responsive">';
 			echo '<table class="table table-bordered table-hover">';
 			echo '<thead><tr><th>Id</th><th>Project Name</th><th>Start Date</th><th>End Date</th><th>Description</th><th>Effort</th><th>Skill Needed</th></tr></thead>';
