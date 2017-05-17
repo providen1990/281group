@@ -40,7 +40,7 @@ require_once 'connect.php';
                         </ol>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-lg-9">
                         <form method="get" action="">
@@ -75,10 +75,13 @@ require_once 'connect.php';
 	
 		$sql = "SELECT p.project_id,p.project_name,p.project_start_date,p.project_end_date,p.project_description,p.project_estimated_effort,p.skill_required  FROM user u, users_project up, projects p WHERE up.project_id = p.project_id and up.user_id = u.user_id  and u.skill like '%$searchText%' ";
 	}
-	/*else{
-		$sql = "SELECT * FROM `projects` WHERE project_start_date >" . $_COOKIE["lasttime"];
-		setcookie("lasttime", time(), time() + 3600*24*30, "/demo1");
-	}*/
+    else{
+        $sql = "select device_os, COUNT(device_os) AS MOST_FREQUENT from record WHERE user_id=" . getIDByEmail($_SESSION['username'],$connection) .  " GROUP BY device_os ORDER BY COUNT(device_os) DESC";
+        $result = mysqli_query($connection, $sql);
+        $row2 = mysqli_fetch_assoc($result);
+        $temp = $row2['device_os'];
+        $sql = "SELECT * FROM `projects` WHERE skill_required LIKE '%$temp%'";
+    }
 	
 	
 	if ($result = mysqli_query($connection, $sql)) {

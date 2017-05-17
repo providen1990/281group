@@ -11,4 +11,20 @@ function Redirect($url){
    	     	window.location = '". $url ."'; </script>";
     exit();
 }
+
+function getIDByEmail($email, $connection){
+
+    $query = "SELECT user_id,email FROM user WHERE email='$email'";
+    $response = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($response);
+    return $row['user_id'];
+}
+
+function getNameByID($id, $connection){
+
+    $query = "SELECT name FROM user WHERE user_id='$id'";
+    $response = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($response);
+    return $row['name'];
+}
 ?>
