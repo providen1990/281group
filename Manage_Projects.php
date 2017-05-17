@@ -141,7 +141,7 @@ require 'apiFunction.php';
 
 
 
-//-------------------------ending tags---------------------------------------------
+
 <?php 
 
 //  <a href='project.php?project_id=1'>a link</a>

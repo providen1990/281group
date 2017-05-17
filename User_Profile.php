@@ -44,49 +44,55 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <label> Experience </label>
-                    <p> <?php echo $row["experience"]; ?> </p>
+            <div class="card text-center">
+                <div class="card-header">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Project Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#tester" role="tab">Tester Registration</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane" id="home" role="tabpanel">
+                        <p>&nbsp;</p>
+                        <p class="text-left"><strong>Experience:</strong></p>
+                        <p class="text-left"> <?php echo $row["experience"]; ?> </p>
 
+                        <p class="text-left"><strong>Device:</strong></p>
+                        <p class="text-left"> <?php echo $row["skill"]; ?> </p>
+
+                        <p class="text-left"><strong>Contact:</strong></p>
+                        <p class="text-left"> <?php echo $row["email"]; ?> </p>
+
+                    </div>
+                    <div class="tab-pane" id="tester" role="tabpanel">
+
+                        <div class="row">
+
+                            <div class="col-lg-6">
+
+                                <form method="POST" action="" id="form">
+                                    <legend>Request Form</legend>
+                                    <input class="form-control" name="name" type="text" placeholder="enter your fullname" required><br />
+                                    <input class="form-control" name="email" type="email" placeholder="enter your email" required><br />
+                                    <input class="form-control" name="projectname" type="text" placeholder="enter project name" required><br />
+                                    <textarea class="form-control" rows="4"  name="comment" form="form" placeholder="comment"></textarea><br />
+                                    <button class="btn btn-primary" type="submit" name="submit" value= "<?php echo htmlspecialchars($arr[1]); ?>" > Apply </button>
+                                </form>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <label> Device </label>
-                    <p> <?php echo $row["skill"]; ?> </p>
-                    <hr>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <label> Contact </label>
-                    <p> <?php echo $row["email"]; ?> </p>
-                    <hr>
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col-lg-6">
-
-                    <form method="POST" action="" id="form">
-                        <legend>Request Form</legend>
-                        <input class="form-control" name="name" type="text" placeholder="enter your fullname" required><br />
-                        <input class="form-control" name="email" type="email" placeholder="enter your email" required><br />
-                        <input class="form-control" name="projectname" type="text" placeholder="enter project name" required><br />
-                        <textarea class="form-control" rows="4"  name="comment" form="form" placeholder="comment"></textarea><br />
-                        <button class="btn btn-primary" type="submit" name="submit" value= "<?php echo htmlspecialchars($arr[1]); ?>" > Apply </button>
-                    </form>
-                </div>
-            </div>
-
-
-
+            
 
 
             <!-- container-fluid, the search form -->
@@ -99,7 +105,7 @@
 
 
 
-//-------------------------ending tags---------------------------------------------
+
 <?php
 
 require 'templates/jQueryAndJavascript.php'; ?>

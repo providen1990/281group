@@ -138,7 +138,7 @@ setcookie($row["project_id"], $row["project_name"], time() + 60);
 
 
 
-//-------------------------ending tags---------------------------------------------
+
 <?php 
 mysqli_close($connection);
 require 'templates/jQueryAndJavascript.php'; ?>

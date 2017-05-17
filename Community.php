@@ -167,7 +167,7 @@ require 'apiFunction.php';
 
 
 
-//-------------------------ending tags---------------------------------------------
+
 <?php 
 
 require 'templates/jQueryAndJavascript.php'; ?>
