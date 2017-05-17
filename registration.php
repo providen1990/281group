@@ -25,8 +25,8 @@
     <input type="text" class="form-control" name="experience" placeholder="Experience in Years" required /> <br />
     <input type="text" class="form-control" name="skill" placeholder="Skills" required /> <br />
     <select class="form-control">
-        <option type="checkbox" name="role_id" value="1" id="test1" /> Tester </option><br />
-        <option type="checkbox" name="role_id" value="2" id="test2" /> Manager </option>
+        <option type="checkbox" name="role_id" value=1 id="test1" /> Tester </option><br />
+        <option type="checkbox" name="role_id" value=2 id="test2" /> Manager </option>
     </select>
 	<div class="text-center"> 
   	  <input type="submit" class="btn btn-secondary" name="submit" />
