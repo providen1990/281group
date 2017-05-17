@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once '../connect.php';
+require '../apiFunction.php';
+getIDByEmail($_SESSION['username'],$connection);
 ?>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
