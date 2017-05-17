@@ -1,7 +1,13 @@
 <?php
 session_start();
-require_once './connect.php';
-require './apiFunction.php';
+$connection = mysqli_connect('aamlirqxmyy6o6.ctytw0bcszve.us-west-2.rds.amazonaws.com', 'root', '1234qwer');
+if (!$connection) {
+    qlie("Database Connection Failed" . mysqli_error($connection));
+}
+$select_db = mysqli_select_db($connection, 'ebdb');
+if (!$select_db) {
+    die("Database Selection Failed" . mysqli_error($connection));
+}
 getIDByEmail($_SESSION['username'],$connection);
 ?>
 <!-- Navigation -->
