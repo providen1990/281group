@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../connect.php';
-require '../apiFunction.php';
+require_once './connect.php';
+require './apiFunction.php';
 getIDByEmail($_SESSION['username'],$connection);
 ?>
 <!-- Navigation -->
