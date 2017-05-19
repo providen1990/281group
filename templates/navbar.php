@@ -2,7 +2,6 @@
 session_start();
 require_once 'connect.php';
 require 'apiFunction.php';
-echo $_SESSION['username'];
 $tem = getIDByEmail($_SESSION['username'], $connection);
 $link11 = 'http://281app.us-west-2.elasticbeanstalk.com/User_Profile.php?user_id=' . $tem;
 
