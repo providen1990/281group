@@ -8,7 +8,7 @@
 	$query = "INSERT INTO user (email,name,password,role_id,experience,skill) VALUES (" . quote($email) . ", " . quote($name) . ", " . quote($pass) . ", " . quote($role_id) . ", " . quote($experience) . ", " . quote($skill) . ");";
 	$response = mysqli_query($connection, $query);
 	mysqli_close($connection);
-		
+	echo $query . $response;
 	
 	
 	//display to browser
@@ -16,11 +16,11 @@
 		//start session when login session end when user close browser
 		session_start();
 		$_SESSION["username"] = $username;
-		Redirect("main.php");
+		//Redirect("main.php");
 	}
 	else{
 	
-		Redirect("index.php");
+		//Redirect("index.php");
 	}
 	
 	/*--------------------------helper function------------------------*/
