@@ -4,6 +4,23 @@ if($_SESSION['username'] == ''){
     echo "Please Login";
     exit();
 }
+
+$connection1 = mysqli_connect('aamlirqxmyy6o6.ctytw0bcszve.us-west-2.rds.amazonaws.com', 'root', '1234qwer');
+if (!$connection1) {
+    die("Database Connection Failed" . mysqli_error($connection1));
+}
+$select_db1 = mysqli_select_db($connection1, 'ebdb');
+if (!$select_db1) {
+    die("Database Selection Failed" . mysqli_error($connection1));
+}
+$arr1= explode('=', getenv("REQUEST_URI"));
+$query1 = "SELECT * FROM projects WHERE project_id=" . $arr1[1];
+
+$response1 = mysqli_query($connection1, $query1);
+$row1 = mysqli_fetch_assoc($response1);
+
+setcookie($row1["project_id"], $row1["project_name"], time() - 3600);
+setcookie($row1["project_id"], $row1["project_name"], time() + 60);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,19 +28,7 @@ if($_SESSION['username'] == ''){
 <head>
 
 <?php 
-require 'templates/metaAndResources.php'; 
-require_once 'connect.php';
-
-
-$arr= explode('=', getenv("REQUEST_URI"));
-$query = "SELECT * FROM projects WHERE project_id=" . $arr[1];
-
-$response = mysqli_query($connection, $query);
-$row = mysqli_fetch_assoc($response);
-
-setcookie($row["project_id"], $row["project_name"], time() - 3600);
-setcookie($row["project_id"], $row["project_name"], time() + 60);
-
+require 'templates/metaAndResources.php';
 
 
 ?>
@@ -33,7 +38,16 @@ setcookie($row["project_id"], $row["project_name"], time() + 60);
 <body>
 
     <div id="wrapper">
-        <?php require 'templates/navbar.php'; ?>
+        <?php
+        require 'templates/navbar.php';
+
+        $arr= explode('=', getenv("REQUEST_URI"));
+        $query = "SELECT * FROM projects WHERE project_id=" . $arr[1];
+
+        $response = mysqli_query($connection, $query);
+        $row = mysqli_fetch_assoc($response);
+
+        ?>
         <div id="page-wrapper">
 
             <div class="container-fluid">

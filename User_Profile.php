@@ -5,14 +5,6 @@
 
     <?php
     require 'templates/metaAndResources.php';
-    require 'apiFunction.php';
-    require 'connect.php';
-
-    $arr= explode('=', getenv("REQUEST_URI"));
-    $query = "SELECT * FROM user WHERE user_id=" . $arr[1];
-
-    $response = mysqli_query($connection, $query);
-    $row = mysqli_fetch_assoc($response);
 
     ?>
 
@@ -21,7 +13,15 @@
 <body>
 
 <div id="wrapper">
-    <?php require 'templates/navbar.php'; ?>
+    <?php
+
+    require 'templates/navbar.php';
+    $arr= explode('=', getenv("REQUEST_URI"));
+    $query = "SELECT * FROM user WHERE user_id=" . $arr[1];
+
+    $response = mysqli_query($connection, $query);
+    $row = mysqli_fetch_assoc($response);
+    ?>
     <div id="page-wrapper">
 
         <div class="container-fluid">

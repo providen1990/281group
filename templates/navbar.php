@@ -1,5 +1,9 @@
 <?php
 session_start();
+require_once 'connect.php';
+require 'apiFunction.php';
+$tem = getIDByEmail($_SESSION['username'],$connection);
+$link11 = 'http://281app.us-west-2.elasticbeanstalk.com/User_Profile.php?user_id=' . $tem;
 
 ?>
 <!-- Navigation -->
@@ -102,7 +106,7 @@ session_start();
                         class="fa fa-user"></i> <?php echo $_SESSION["username"]; ?> <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                    <a href=<?php echo $link11 ?> ><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>

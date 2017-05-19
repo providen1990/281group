@@ -12,8 +12,7 @@ if($_SESSION['username'] == ''){
 
 <?php 
 require 'templates/metaAndResources.php'; 
-require_once 'connect.php';
-require 'apiFunction.php';
+
 ?>
 
 </head>
