@@ -15,11 +15,11 @@
 		//start session when login session end when user close browser
 		session_start();
 		$_SESSION["username"] = $username;
-		//Redirect("main.php");
+		Redirect("main.php");
 	}
 	else{
 	
-		//Redirect("index.php");
+		Redirect("index.php");
 	}
 	
 	/*--------------------------helper function------------------------*/
