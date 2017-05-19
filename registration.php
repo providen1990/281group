@@ -19,7 +19,7 @@
 
 <form method="post" action="register.php">
 	<div class = "text-center"> <h2> Registration </h2> </div><br />
-	<input type="email" class="form-control" name="email" placeholder="Email" required /> <br />
+	<input type="email" class="form-control" name="username" placeholder="Email" required /> <br />
 	<input type="password" class="form-control" name="password" placeholder="Password" required /> <br />
 	<input type="text" class="form-control" name="name" placeholder="Full-name" required /> <br />
     <input type="text" class="form-control" name="experience" placeholder="Experience in Years" required /> <br />
