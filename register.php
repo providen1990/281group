@@ -5,10 +5,9 @@
 	
 	//prepare, process query
 	$pass = hash("sha256", $password);
-	$query = "INSERT INTO user (email,name,password,role_id,experience,skill) VALUES (" . quote($email) . ", " . quote($name) . ", " . quote($pass) . ", " . quote($role_id) . ", " . quote($experience) . ", " . quote($skill) . ");";
+	$query = "INSERT INTO user (email,name,password,role_id,experience,skill) VALUES (" . quote($username) . ", " . quote($name) . ", " . quote($pass) . ", " . quote($role_id) . ", " . quote($experience) . ", " . quote($skill) . ");";
 	$response = mysqli_query($connection, $query);
 	mysqli_close($connection);
-	echo $query . $response;
 	
 	
 	//display to browser
